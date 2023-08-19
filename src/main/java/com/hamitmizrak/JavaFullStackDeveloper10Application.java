@@ -20,7 +20,7 @@ import java.util.TimeZone;
 // @EntityScan(basePackages = "com.hamitmizrak.data.entity") //Entity bulamadığı zaman
 // @EnableJpaRepositories(basePackages = "com.hamitmizrak.data.repository") //Repository bulamadığı zaman
 
-// Spring Cache aktif etmek gerekiyor
+// Spring Cache aktif etmek gerekiyor.
 // @EnableCaching
 
 // Spring Security
