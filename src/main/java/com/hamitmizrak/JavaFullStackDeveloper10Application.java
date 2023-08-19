@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.TimeZone;
 
-
 // Mongo aktif etmek ici
 // @EnableMongoRepositories
 
@@ -55,5 +54,4 @@ public class JavaFullStackDeveloper10Application {
 
 		SpringApplication.run(JavaFullStackDeveloper10Application.class, args);
 	}
-
 }
