@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ModelMapperBean {
 
-    @Bean
+    @Bean(initMethod = "firstBeforeBean",destroyMethod = "firstAfterBean")
     public ModelMapper modelMapperMethod(){
         return new ModelMapper();
     }
