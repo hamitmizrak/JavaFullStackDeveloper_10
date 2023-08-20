@@ -7,7 +7,6 @@ import java.util.Map;
 
 // LOMBOK
 @Data
-
 // spring Frameworkta gelen Error'ları kendimize göre yakalamak
 // (Jackson: objeyi json'a çevirir)
 // Eğer sistemde null değer varsa backentte gönderme
