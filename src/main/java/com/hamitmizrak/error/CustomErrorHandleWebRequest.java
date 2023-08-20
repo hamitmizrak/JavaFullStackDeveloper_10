@@ -57,7 +57,8 @@ public class CustomErrorHandleWebRequest implements ErrorController {
         // Spring >=2.3
         Map<String,Object> attributes=errorAttributes.getErrorAttributes(
                 webRequest,
-                ErrorAttributeOptions.of(ErrorAttributeOptions.Include.MESSAGE,ErrorAttributeOptions.Include.BINDING_ERRORS)
+                ErrorAttributeOptions
+                        .of(ErrorAttributeOptions.Include.MESSAGE,ErrorAttributeOptions.Include.BINDING_ERRORS)
         ); //end attributes
 
         // Spring'ten verileri almak
@@ -69,10 +70,10 @@ public class CustomErrorHandleWebRequest implements ErrorController {
         // attributes error varsa
         if(attributes.containsKey("errors")){
             List<FieldError> fieldErrorList= (List<FieldError>) attributes.get("errors");
-            Map<String,String> validationMistake=new HashMap<>();
+            validationErrors=new HashMap<>();
             // for each dongu
             for(FieldError fieldError : fieldErrorList){
-                validationMistake.put(fieldError.getField(),fieldError.getDefaultMessage());
+                validationErrors.put(fieldError.getField(),fieldError.getDefaultMessage());
             }
             apiResult.setValidationErrors(validationErrors);
         }
