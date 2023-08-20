@@ -12,7 +12,7 @@ public class CategoryDto  extends AuditingAwareBaseDto implements Serializable {
     public static final Long serialVersionUID=1L;
 
     // HEADER
-    @NotEmpty(message = "Kategori alanı boş geçemezsiniz")
-    @Size(min=10,message = "Kategori en az 10 karakterden küçük olamaz.")
+    @NotEmpty(message = "{blog.category.validation.constraints.NotNull.message}")
+    @Size(min=10,message = "{blog.category.least.validation.constraints.NotNull.message}")
     private String categoryName;
 }

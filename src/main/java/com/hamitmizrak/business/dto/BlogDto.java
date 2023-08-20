@@ -24,13 +24,13 @@ public class BlogDto extends AuditingAwareBaseDto implements Serializable {
     public static final Long serialVersionUID=1L;
 
     // HEADER
-    @NotEmpty(message = "Başlık alanı boş geçemezsiniz")
-    @Size(min=10,message = "Başlık en az 10 karakterden küçük olamaz.")
+    @NotEmpty(message ="{blog.header.validation.constraints.NotNull.message}")
+    @Size(min=10,message = "{blog.header.least.validation.constraints.NotNull.message}")
     private String header;
 
     // CONTENT
-    @NotEmpty(message = "İçerik boş geçilemez")
-    @Size(min = 10,message = "İçerik en az 10 karakter olmalı, küçük giremezsiniz")
+    @NotEmpty(message = "{blog.content.validation.constraints.NotNull.message}")
+    @Size(min = 10,message = "{blog.content.least.validation.constraints.NotNull.message}")
     private String content;
 
 } //end class
