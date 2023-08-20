@@ -1,5 +1,6 @@
 package com.hamitmizrak.business.dto;
 
+import com.hamitmizrak.audit.AuditingAwareBaseDto;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ import java.util.Date;
 @Log4j2
 @Builder
 // Validation
-public class BlogDto implements Serializable {
+public class BlogDto extends AuditingAwareBaseDto implements Serializable {
 
     // serileştirme
     public static final Long serialVersionUID=1L;
@@ -32,7 +33,4 @@ public class BlogDto implements Serializable {
     @Size(min = 10,message = "İçerik en az 10 karakter olmalı, küçük giremezsiniz")
     private String content;
 
-    // DATE Builder => default olarak ayarlıyor
-    @Builder.Default
-    private Date systemDate=new Date(System.currentTimeMillis());
 } //end class
