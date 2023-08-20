@@ -78,5 +78,5 @@ public class CustomErrorHandleWebRequest implements ErrorController {
             apiResult.setValidationErrors(validationErrors);
         }
         return apiResult;
-    }
-}
+    } //end handleErrorMethod
+} // end CustomErrorHandleWebRequest
