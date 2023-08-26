@@ -19,6 +19,7 @@ import java.util.Date;
 @Log4j2
 @Builder
 
+// ENTITY
 @Entity
 @Table(name = "category_blogs")
 // Category(1) Blog(N)
