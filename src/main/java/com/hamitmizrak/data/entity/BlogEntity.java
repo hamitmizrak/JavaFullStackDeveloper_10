@@ -17,8 +17,9 @@ import java.io.Serializable;
 @Log4j2
 @Builder
 
+// ENTITY
 @Entity
-@Table(name = "blog")
+@Table(name = "blogs")
 // Blog(N)  Category(1)
 public class BlogEntity extends AuditingAwareBaseEntity implements Serializable {
 
@@ -28,33 +29,11 @@ public class BlogEntity extends AuditingAwareBaseEntity implements Serializable 
     // ID
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="blog_id",unique = true,nullable = false)
+    @Column(name="blog_id",unique = true,nullable = false,insertable = true,updatable = false)
     private Long blogId;
 
-    // HEADER
-    @Column(
-            name = "header",
-            nullable = false,
-            unique = true,
-            length = 500,
-            insertable = true,
-            updatable = true,
-            columnDefinition = "varchar(255) default 'blog için başlık girilmedi'")
-    private String header;
+    // Embedded
+    @Embedded
+    private BlogEntityEmbeddable blogEntityEmbeddable=new BlogEntityEmbeddable();
 
-    // CONTENT
-    @Column(name = "content", columnDefinition = "varchar(255) default 'blog için içerik girilmedi'")
-    private String content;
-
-   /*
-   Javada olsun Database(Entity) olmasının
-   @Transient
-    private Object specialData;
-    */
-
-    /*
-    Büyük nesneler için kullanıyoruz.
-    @Lob
-    private String bigData;
-    */
 } //end class
