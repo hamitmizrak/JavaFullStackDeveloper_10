@@ -51,6 +51,7 @@ public class CategoryApiImpl implements ICategoryApi<CategoryDto> {
     }
 
     // UPDATE
+    // http://localhost:4444/category/api/v1/update/1
     @Override
     @PutMapping(value="/update/{id}")
     public ResponseEntity<?> categoryApiUpdate(@PathVariable(name = "id") Long id, @Valid @RequestBody CategoryDto categoryDto) {
@@ -58,6 +59,7 @@ public class CategoryApiImpl implements ICategoryApi<CategoryDto> {
     }
 
     // DELETE BY ID
+    // http://localhost:4444/category/api/v1/delete/1
     @Override
     @DeleteMapping(value="/delete/{id}")
     public ResponseEntity<?> categoryApiDeleteById(@PathVariable(name = "id") Long id) {
@@ -76,4 +78,5 @@ public class CategoryApiImpl implements ICategoryApi<CategoryDto> {
     public ResponseEntity<List<CategoryDto>> categoryApiSpeedData(Long key) {
         return null;
     }
-}
+
+} //end class

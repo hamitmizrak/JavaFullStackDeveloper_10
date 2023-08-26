@@ -113,11 +113,11 @@ public class CategoryServicesImpl implements ICategoryServices<CategoryDto, Cate
        CategoryDto categoryFindDto= categoryServiceFindById(id);
        if(categoryFindDto!=null){
            CategoryEntity categoryEntity=dtoToEntity(categoryFindDto);
-           categoryEntity.setCategoryName(categoryFindDto.getCategoryName());
+           categoryEntity.setCategoryName(categoryDto.getCategoryName());
            iCategoryRepository.save(categoryEntity);
            // Dönüştede ID ve Date Set et
        }
-        return categoryFindDto;
+        return categoryDto;
     }
 
     // DELETE
