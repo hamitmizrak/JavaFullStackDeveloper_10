@@ -1,4 +1,4 @@
-package com.hamitmizrak.data.entity;
+package com.hamitmizrak.data;
 
 
 import jakarta.persistence.*;
