@@ -12,10 +12,7 @@ import java.io.Serializable;
 
 // LOMBOK
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Log4j2
-@Builder
 
 // ENTITY
 @Entity
@@ -36,4 +33,18 @@ public class BlogEntity extends AuditingAwareBaseEntity implements Serializable 
     @Embedded
     private BlogEntityEmbeddable blogEntityEmbeddable=new BlogEntityEmbeddable();
 
+    //  RELATION
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @JoinColumn(name="category_id",nullable = false)
+    private CategoryEntity relationCategoryEntity;
+
+    // Constructor (Parametresiz)
+    public BlogEntity() {
+    }
+
+    // Constructor (Parametreli)
+    public BlogEntity(BlogEntityEmbeddable blogEntityEmbeddable, CategoryEntity relationCategoryEntity) {
+        this.blogEntityEmbeddable = blogEntityEmbeddable;
+        this.relationCategoryEntity = relationCategoryEntity;
+    }
 } //end class

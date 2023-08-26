@@ -9,27 +9,31 @@ import java.util.Date;
 
 // LOMBOK
 @Getter @Setter
+abstract  public class AuditingAwareBaseDto  implements Serializable {
 
-// BaseDto
-abstract public class AuditingAwareBaseDto implements Serializable {
-
-    // serileştirme
-    public static final Long serialVersionUID = 1L;
+    // Serileştirme
+    public static final Long serialVersionUID=1L;
 
     // ID
-    protected Long id;
+    private Long id;
 
-    // DATE Builder => default olarak ayarlıyor
+    // DATE
     @Builder.Default
-    protected Date systemDate = new Date(System.currentTimeMillis());
+    private Date systemDate=new Date(System.currentTimeMillis());
 
-    // AUDITING
-    // Ekleme User, Date
-    @JsonIgnore // backentte giden veriyi saklasın
+    // AUDTING
+    // @JsonIgnore => Backentte veri giderken bu bilgiyi gösterme
+    // KIM EKLEDİ ?
+    @JsonIgnore
     protected String createdUser;
+
+    // KİM NE ZAMAN EKLEDİ ?
+    @JsonIgnore
     protected Date createdDate;
 
-    // Güncelleme User, Date
+    // KIM GÜNCELLEDİ ?
     protected String updatedUser;
+
+    // KİM NE ZAMAN GÜNCELLEDİ ?
     protected Date updatedDate;
-} //end class
+}

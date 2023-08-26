@@ -21,8 +21,7 @@ import java.util.Date;
 
 // SUPER CLASS
 @MappedSuperclass
-// Json'a emir veriyoruz Buradaki date olanaları takip etme
-@JsonIgnoreProperties(value = {"created_date,updated_date"},allowGetters = true)
+@JsonIgnoreProperties(value = {"created_date,updated_date"},allowGetters = true) // Json'a emir veriyoruz Buradaki date olanaları takip etme
 @EntityListeners(AuditingEntityListener.class)
 abstract public class AuditingAwareBaseEntity  implements Serializable {
 
