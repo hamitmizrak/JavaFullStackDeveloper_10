@@ -1,5 +1,6 @@
 package com.hamitmizrak.data.entity;
 
+import com.hamitmizrak.audit.AuditingAwareBaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,7 +19,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "category_blog")
 // Category(1) Blog(N)
-public class CategoryEntity  implements Serializable {
+public class CategoryEntity extends AuditingAwareBaseEntity implements Serializable {
 
     // serileştirme
     public static final Long serialVersionUID = 1L;
