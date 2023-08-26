@@ -20,7 +20,7 @@ import java.io.Serializable;
 // Validation
 
 // CategoryDto(1) - BlogDto(N)
-public class CategoryDto  extends AuditingAwareBaseDto implements Serializable {
+public class CategoryDto extends AuditingAwareBaseDto implements Serializable {
 
     // serileştirme
     public static final Long serialVersionUID=1L;
