@@ -32,7 +32,6 @@ public class EmailServicesImpl implements IEmailServices<EmailDto, EmailEntity> 
     private final ModelMapperBean modelMapperBean;
     private final JavaMailSender javaMailSender; //Email Göndersin
 
-
     // MODEL MAPPER
     @Override
     public EmailDto entityToDto(EmailEntity emailEntity) {
@@ -43,7 +42,6 @@ public class EmailServicesImpl implements IEmailServices<EmailDto, EmailEntity> 
     public EmailEntity dtoToEntity(EmailDto emailDto) {
         return  modelMapperBean.modelMapperMethod().map(emailDto,EmailEntity.class);
     }
-
 
     // LIST
     @Override
