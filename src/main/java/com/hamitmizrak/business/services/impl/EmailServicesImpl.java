@@ -65,7 +65,7 @@ public class EmailServicesImpl implements IEmailServices<EmailDto, EmailEntity> 
     public EmailDto basicSendEmail(EmailDto emailDto) {
         // Model Mapper
         EmailEntity emailEntity=dtoToEntity(emailDto);
-        emailEntity=iEmailRepository.save(emailEntity);
+        iEmailRepository.save(emailEntity);
         emailDto.setId(emailEntity.getId());
 
         // Mail Send
