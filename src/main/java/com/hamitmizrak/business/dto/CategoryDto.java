@@ -27,6 +27,6 @@ public class CategoryDto extends AuditingAwareBaseDto implements Serializable {
 
     // HEADER
     @NotEmpty(message = "{blog.category.validation.constraints.NotNull.message}")
-    @Size(min=10,message = "{blog.category.least.validation.constraints.NotNull.message}")
+    @Size(min=2,message = "{blog.category.least.validation.constraints.NotNull.message}")
     private String categoryName;
 }
