@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 // CrudRepository
 // JpaRepository
-
 @Repository
 public interface IBlogRepository extends CrudRepository<BlogEntity,Long> {
 }

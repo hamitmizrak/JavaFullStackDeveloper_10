@@ -5,7 +5,6 @@ import com.hamitmizrak.data.BlogEntityEmbeddable;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.extern.log4j.Log4j2;
-
 import java.io.Serializable;
 
 // LOMBOK

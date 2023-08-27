@@ -27,7 +27,6 @@ public class BlogServicesImpl implements IBlogServices<BlogDto, BlogEntity> {
     private final IBlogRepository iBlogRepository;
     private final ModelMapperBean modelMapperBean;
 
-
     // MODEL MAPPER
     @Override
     public BlogDto entityToDto(BlogEntity blogEntity) {

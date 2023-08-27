@@ -14,7 +14,6 @@ public interface IEmailServices<D, E> extends  IEmailAttachment{
 
     public E dtoToEntity(D d);
 
-
     // LIST
     public List<D> emailServiceList();
 

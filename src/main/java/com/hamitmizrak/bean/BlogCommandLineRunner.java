@@ -1,6 +1,5 @@
 package com.hamitmizrak.bean;
 
-import com.hamitmizrak.business.dto.CategoryDto;
 import com.hamitmizrak.business.services.IBlogServices;
 import com.hamitmizrak.business.services.ICategoryServices;
 import com.hamitmizrak.data.entity.BlogEntity;
@@ -82,15 +81,8 @@ public class BlogCommandLineRunner {
     @Bean
     public CommandLineRunner blogCommandLineRunnerMethod() {
         return args -> {
-            // category yoksa yeni kategoriler eklensin.
-            if(randomCategory()==null){
-                randomCategory();
-            }
-
-            //blogCreate(0);
-
-            //System.out.println("CommandLineRunner Çalıştı");
-            //log.info("CommandLineRunner Çalıştı");
+            System.out.println("CommandLineRunner Çalıştı");
+            log.info("CommandLineRunner Çalıştı");
         };
     }
 }
