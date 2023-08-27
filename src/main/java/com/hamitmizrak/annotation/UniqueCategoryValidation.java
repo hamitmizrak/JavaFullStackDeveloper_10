@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 // LOMBOK
 @RequiredArgsConstructor
 
+// Annotation
 public class UniqueCategoryValidation implements ConstraintValidator<UniqueCategoryName,String> {
 
     // Injection
