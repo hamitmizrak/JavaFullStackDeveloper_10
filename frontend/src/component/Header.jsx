@@ -22,6 +22,8 @@ class Header extends Component {
         this.state = {}
 
         // BIND
+        this.headerLanguageServices=this.headerLanguageServices.bind(this);
+        this.internationalizationLanguage=this.internationalizationLanguage.bind(this);
     }
 
     // CDM
@@ -77,38 +79,40 @@ class Header extends Component {
                                     </a>
                                 </li>
                                 {/* <li className="nav-item dropdown">
-          <a
-            className="nav-link dropdown-toggle"
-            href="#"
-            id="dropdownId"
-            data-bs-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Dropdown
-          </a>
-          <div className="dropdown-menu" aria-labelledby="dropdownId">
-            <a className="dropdown-item" href="#">
-              Action 1
-            </a>
-            <a className="dropdown-item" href="#">
-              Action 2
-            </a>
-          </div>
-        </li> */}
+                                    <a
+                                        className="nav-link dropdown-toggle"
+                                        href="#"
+                                        id="dropdownId"
+                                        data-bs-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                    >
+                                        Dropdown
+                                    </a>
+                                    <div className="dropdown-menu" aria-labelledby="dropdownId">
+                                        <a className="dropdown-item" href="#">
+                                        Action 1
+                                        </a>
+                                        <a className="dropdown-item" href="#">
+                                        Action 2
+                                        </a>
+                                    </div>
+                                    </li> */}
                             </ul>
 
                             {/* i18n import */}
                             <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
                                 <li className="nav-item">
                                     <a href="#" onClick={() => this.internationalizationLanguage("tr")}>
-                                        <img src={tr_flag} className='rounded-circle' style={{ width: "45px", marginRight: "5px" }} />
+                                        <img src={tr_flag} className='rounded-circle'
+                                            style={{ width: "45px", marginRight: "5px" }} />
                                     </a>
                                 </li>
 
                                 <li className="nav-item">
                                     <a href="#" onClick={() => this.internationalizationLanguage("en")}>
-                                        <img src={en_flag} className='rounded-circle' style={{ width: "45px", marginRight: "5px" }} />
+                                        <img src={en_flag} className='rounded-circle'
+                                            style={{ width: "45px", marginRight: "5px" }} />
                                     </a>
                                 </li>
                             </ul>
@@ -126,7 +130,6 @@ class Header extends Component {
                         </div>
                     </div>
                 </nav>
-
 
             </React.Fragment>
         ) //end return
