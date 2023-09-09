@@ -21,6 +21,9 @@ class Footer extends Component {
 
     // CDM
     // function new Date().
+    newDate(){
+        return " 2021 - "+new Date().getFullYear();
+    }
 
     // RENDER
     render() {
@@ -34,7 +37,7 @@ class Footer extends Component {
                         className="text-center p-3"
                         style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
                     >
-                        {this.props.copy} 
+                     {this.newDate()}   {this.props.copy} 
                     </div>
                     {/* Copyright */}
                 </footer>
