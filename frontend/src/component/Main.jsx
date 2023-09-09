@@ -38,6 +38,7 @@ class Main extends Component {
         <br /><br /><br />
        <p> Hoşgeldiniz </p>
        <img src={mainPicture} />
+       <br />
        <Link className="btn btn-primary mt-3 ms-2" to="/category/list">Category List</Link>
        
       </React.Fragment>

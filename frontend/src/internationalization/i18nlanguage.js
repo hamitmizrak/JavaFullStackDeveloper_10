@@ -6,6 +6,7 @@ i18n.use(initReactI18next).init({
         en:
         {
             translations: {
+                'home':"Home",
                 'id': 'ID',
                 'category_name': 'Category Name',
                 'date': 'Date',
@@ -22,6 +23,7 @@ i18n.use(initReactI18next).init({
         tr:
         {
             translations: {
+                'home':"Anasayfa",
                 'id': 'ID',
                 'category_name': 'Kategori Adı',
                 'date': 'Tarih',

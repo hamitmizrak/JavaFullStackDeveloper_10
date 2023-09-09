@@ -11,11 +11,11 @@ import BlogRouter from './BlogRouter';
 // ROUTER-DOM
 import { BrowserRouter } from 'react-router-dom';
 
+// Language
+import './internationalization/i18nlanguage'
+
 // ROOT
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
-// Language
- //import "./internationalization/i18nlanguage";
 
 // RENDER
 root.render(
@@ -23,7 +23,6 @@ root.render(
     <BrowserRouter>
       <BlogRouter />
     </BrowserRouter>
-
   </React.StrictMode>
 );
 

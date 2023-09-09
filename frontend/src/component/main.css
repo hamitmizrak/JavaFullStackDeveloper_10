@@ -9,10 +9,9 @@ p{
     padding-left: 2rem;
     padding-right: 2rem;
     text-align: justify;
-
 }
 
 img{
-    max-width: 100%;
+    max-width: 400px;
     height: auto;
 }
