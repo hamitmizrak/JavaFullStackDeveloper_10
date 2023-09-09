@@ -57,7 +57,7 @@ import CategoryView from "./component/category/CategoryView";
                 </Routes>
 
                 {/*Footer*/}
-                <Footer copy="&copy; Bütün Haklar Saklıdır."></Footer>
+                <Footer copy="&copy; 2021-2023 Bütün Haklar Saklıdır."></Footer>
             </React.Fragment>
         ) //end return
     } // // end render
