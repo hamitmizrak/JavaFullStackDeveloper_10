@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 
 // CLASS
 // Class Component Template
-export default class BlogRouter extends Component {
+export default class ClassComponentTemplate extends Component {
 
   // Ekranda görünen
   static displayName="Blog Router"
