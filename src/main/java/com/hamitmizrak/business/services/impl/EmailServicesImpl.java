@@ -60,7 +60,7 @@ public class EmailServicesImpl implements IEmailServices<EmailDto, EmailEntity> 
     ///////////////////////////////////////////////////
     // EMAIL BASIC SEND
     @Override
-    @Transactional
+    //@Transactional
     @SneakyThrows // Throws
     public EmailDto basicSendEmail(EmailDto emailDto) {
         // Model Mapper
@@ -83,7 +83,7 @@ public class EmailServicesImpl implements IEmailServices<EmailDto, EmailEntity> 
 
     //  EMAIL INTERMEDIA PICTURE, PDF SEND
     @Override
-    @Transactional
+    //@Transactional
     @SneakyThrows // Throws
     public EmailDto intermediaSendEmail(EmailDto emailDto) {
         MimeMessage mimeMessage=javaMailSender.createMimeMessage();
