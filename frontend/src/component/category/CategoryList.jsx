@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function CategoryList() {
   return (
-    <div>CategoryList</div>
+    <div>
+        <br /><br /><br /><br />
+        CategoryList</div>
   )
 }

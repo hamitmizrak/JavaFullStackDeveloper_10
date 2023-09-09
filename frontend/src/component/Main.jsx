@@ -2,7 +2,15 @@
 import React, { Component } from 'react'
 import { withTranslation } from 'react-i18next';
 
-// CLASS
+// Router
+import { Link } from 'react-router-dom';
+
+// Main Css
+import './main.css';
+
+// Image
+import mainPicture from "../img/moon.jpg"
+
 // Class Component Template
 class Main extends Component {
 
@@ -27,7 +35,11 @@ class Main extends Component {
     // RETURN
     return (
       <React.Fragment>
-        Footer 44
+        <br /><br /><br />
+       <p> Hoşgeldiniz </p>
+       <img src={mainPicture} />
+       <Link className="btn btn-primary mt-3 ms-2" to="/category/list">Category List</Link>
+       
       </React.Fragment>
     ) //end return
   } // // end render
