@@ -7,7 +7,6 @@ import tr_flag from "../img/flag/tr.png"
 import en_flag from "../img/flag/en.png"
 import axios from 'axios';
 
-// CLASS
 // Class Component Template
 class Header extends Component {
 
