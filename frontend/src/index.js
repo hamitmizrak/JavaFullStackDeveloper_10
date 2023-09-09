@@ -15,7 +15,7 @@ import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // Language
-import "./internationalization/i18nlanguage"
+ //import "./internationalization/i18nlanguage";
 
 // RENDER
 root.render(
