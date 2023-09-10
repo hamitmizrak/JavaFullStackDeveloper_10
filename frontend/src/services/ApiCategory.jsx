@@ -15,7 +15,7 @@ class ApiCategory {
 
     // LIST
     // http://localhost:4444/category/api/v1/list
-    //@GetMapping(value="/list")
+    //@GetMapping(value="/list")        
     categoryApiList() {
         return axios.get(`${PERSIST_URL}/list`);
     }

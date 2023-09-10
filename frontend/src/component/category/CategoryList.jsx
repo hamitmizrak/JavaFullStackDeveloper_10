@@ -37,8 +37,7 @@ function CategoryList({ t, i18n, props }) {
   }, []); //end useEffect
   /////////////////////////////////////////
   // FUNCTION ALL
-   // id: 1, systemDate: '2023-08-28T07:55:24.075+00:00', updatedUser: 'HamitM.', updatedDate: '2023-08-29T10:24:33.428+00:00', categoryName: 'bilgisayar449696'
-  
+  // id: 1, systemDate: '2023-08-28T07:55:24.075+00:00', updatedUser: 'HamitM.', updatedDate: '2023-08-29T10:24:33.428+00:00', categoryName: 'bilgisayar449696'
 
   //2.YOL UPDATE (LocalStorage)
   const setUpdateCategory = (data) => {
@@ -53,15 +52,13 @@ function CategoryList({ t, i18n, props }) {
     localStorage.setItem("category_view_id",id);
    }
 
-
   //DELETE
   const setDeleteCategory = (id) => {
     if(window.confirm("Silmek istiyor musunuz")){
       ApiCategory.categoryApiDeleteById(id)
       .then(()=>{
         getAfterDeleteCategoryListReturn();
-          //window.location="/admin/categories";
-        
+          //window.location="/category/list";
       })
       .catch(()=>{})
     }else{
@@ -84,7 +81,6 @@ function CategoryList({ t, i18n, props }) {
       console.error(err);
     });
    }
-
 
  // RETURN
   return (
