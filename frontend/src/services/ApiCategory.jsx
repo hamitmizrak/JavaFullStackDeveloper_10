@@ -37,7 +37,7 @@ class ApiCategory {
     // http://localhost:4444/category/api/v1/delete/1
     //@DeleteMapping(value = "/delete/{id}")
     categoryApiDeleteById(id) {
-        return axios.delete(`${PERSIST_URL}/update/${id}`);
+        return axios.delete(`${PERSIST_URL}/delete/${id}`);
     }
 
 } //end class
