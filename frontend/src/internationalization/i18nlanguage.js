@@ -12,6 +12,7 @@ i18n.use(initReactI18next).init({
                 'date': 'Date',
                 'update': 'Update',
                 'delete': 'Delete',
+                'cleaner': 'Cleaner',
                 'view': 'View',
                 'create': 'Create',
                 'category_list':"Category List",
@@ -19,7 +20,7 @@ i18n.use(initReactI18next).init({
                 'category_update':"Category Update",
                 'category_delete':"Category Delete",
                 "updatedUser":"updated User",
-                'category_name':"Category Name",
+                'category':"Category",
             }
         },
         tr:
@@ -31,6 +32,7 @@ i18n.use(initReactI18next).init({
                 'date': 'Tarih',
                 'update': 'Güncelle',
                 'delete': 'Sil',
+                'cleaner': 'Temizle',
                 'view': 'Göster',
                 'create': 'Ekle',
                 'category_list':"Kategori List",
@@ -38,7 +40,7 @@ i18n.use(initReactI18next).init({
                 'category_update':"Kategori Güncelle",
                 'category_delete':"Kategori Sil",
                 "updatedUser":"Kim Güncelledi",
-                'category_name':"Kategori Adı",
+                'category':"Kategori",
             }
         }
     },

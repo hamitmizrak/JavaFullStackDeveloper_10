@@ -51,6 +51,7 @@ function CategoryView({ t, i18n, props }) {
   // RETURN
   return (
     <React.Fragment>
+      <h1 className="text-center display-3">{t("category_view")}</h1>
       <div className="card">
         <img className="card-img-top" src={myViewPicture} alt="Title" />
         <div className="card-body">
@@ -63,7 +64,6 @@ function CategoryView({ t, i18n, props }) {
     </React.Fragment>
   ) //end return
 } // end function
-
 
 // i18n 
 export default withTranslation()(CategoryView);

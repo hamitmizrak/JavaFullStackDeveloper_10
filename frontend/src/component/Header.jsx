@@ -28,8 +28,8 @@ class Header extends Component {
         this.state = {}
 
         // BIND
-        this.headerLanguageServices=this.headerLanguageServices.bind(this);
-        this.internationalizationLanguage=this.internationalizationLanguage.bind(this);
+        this.headerLanguageServices = this.headerLanguageServices.bind(this);
+        this.internationalizationLanguage = this.internationalizationLanguage.bind(this);
     }
 
     // CDM
@@ -79,12 +79,15 @@ class Header extends Component {
                                         {this.props.t("home")} <span className="visually-hidden">(current)</span>
                                     </a>
                                 </li>
-                                <li className="nav-item">
+                                {/* <li className="nav-item">
                                     <Link to="/category/list" className="nav-link" href="#">
                                         {t("category_list")}
                                     </Link>
-                                </li>
-                                {/* <li className="nav-item dropdown">
+                                </li> */}
+
+                            </ul>
+                            <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
+                                <li className="nav-item dropdown">
                                     <a
                                         className="nav-link dropdown-toggle"
                                         href="#"
@@ -93,17 +96,17 @@ class Header extends Component {
                                         aria-haspopup="true"
                                         aria-expanded="false"
                                     >
-                                        Dropdown
+                                        {t("category")}
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="dropdownId">
-                                        <a className="dropdown-item" href="#">
-                                        Action 1
-                                        </a>
-                                        <a className="dropdown-item" href="#">
-                                        Action 2
-                                        </a>
+                                        <Link to="/category/list" className="dropdown-item" href="#">
+                                            {t("category_list")}
+                                        </Link>
+                                        <Link to="/category/create" className="dropdown-item" href="#">
+                                            {t("category_create")}
+                                        </Link>
                                     </div>
-                                    </li> */}
+                                </li>
                             </ul>
 
                             {/* i18n import */}
@@ -136,7 +139,7 @@ class Header extends Component {
                         </div>
                     </div>
                 </nav>
-                <div style={{marginTop:"12%"}}></div>
+                <div style={{ marginTop: "12%" }}></div>
 
             </React.Fragment>
         ) //end return
