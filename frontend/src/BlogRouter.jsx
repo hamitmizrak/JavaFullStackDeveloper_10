@@ -1,6 +1,6 @@
 // rcc
-import React, {Component} from 'react'
-import {Navigate, Route, Routes} from "react-router-dom";
+import React, { Component } from 'react'
+import { Navigate, Route, Routes } from "react-router-dom";
 
 // Header, Main, Footer
 import Header from "./component/Header";
@@ -17,7 +17,7 @@ import { withTranslation } from 'react-i18next';
 import CategoryView from "./component/category/CategoryView";
 
 // Class Component Template
- class BlogRouter extends Component {
+class BlogRouter extends Component {
 
     // Ekranda görünen
     static displayName = "Blog Router"
@@ -33,10 +33,10 @@ import CategoryView from "./component/category/CategoryView";
     }
 
     // CDM
-        // function new Date().
-        newDate(){
-            return new Date().getFullYear();
-        }
+    // function new Date().
+    newDate() {
+        return new Date().getFullYear();
+    }
 
     // RENDER
     render() {
@@ -46,18 +46,20 @@ import CategoryView from "./component/category/CategoryView";
                 {/*Header*/}
                 <Header logo="fa-solid fa-jet-fighter-up"></Header>
 
-                <Routes>
-                    {/*Root Path*/}
-                    <Route path={"/"} element={<Main/>} />
+                <div className="container">
+                    <Routes>
+                        {/*Root Path*/}
+                        <Route path={"/"} element={<Main />} />
 
-                    <Route path={"/category/list"} element={<CategoryList name="Category List"/>}/>
-                    <Route path={"/category/create"} element={<CategoryCreate name="Category Create"/>}/>
-                    <Route path={"/category/view/:id"} element={<CategoryView name="Category View" />} />
-                    <Route path={"/category/update/:id"} element={<CategoryUpdate name="Category Update"/>}/>
+                        <Route path={"/category/list"} element={<CategoryList name="Category List" />} />
+                        <Route path={"/category/create"} element={<CategoryCreate name="Category Create" />} />
+                        <Route path={"/category/view/:id"} element={<CategoryView name="Category View" />} />
+                        <Route path={"/category/update/:id"} element={<CategoryUpdate name="Category Update" />} />
 
-                    {/* Bad Request*/}
-                    <Route path={"*"} element={<Navigate to={"/"} />} />
-                </Routes>
+                        {/* Bad Request*/}
+                        <Route path={"*"} element={<Navigate to={"/"} />} />
+                    </Routes>
+                </div>
 
                 {/*Footer*/}
                 <Footer copy="&copy;Bütün Haklar Saklıdır."></Footer>

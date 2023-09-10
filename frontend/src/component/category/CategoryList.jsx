@@ -17,7 +17,7 @@ function CategoryList({ t, i18n, props }) {
   let navigate = useNavigate();
 
   // STATE
-  const [CategoryStateApi, setCategoryStateApi] = useState([]); //dikkat diziyi unutma
+  const [categoryListStateApi, setcategoryListStateApi] = useState([]); //dikkat diziyi unutma
 
   // USE EFFECT
   useEffect(() => {
@@ -28,7 +28,7 @@ function CategoryList({ t, i18n, props }) {
         // console.log(response.status);
         // console.log(response.headers);
         if (response.status === 200) {
-          setCategoryStateApi(response.data)
+          setcategoryListStateApi(response.data)
         }
       })
       .catch((err) => {
@@ -41,52 +41,52 @@ function CategoryList({ t, i18n, props }) {
 
   //2.YOL UPDATE (LocalStorage)
   const setUpdateCategory = (data) => {
-    let {id,categoryName,systemDate}=data;
-    localStorage.setItem("category_update_id",id);
-    localStorage.setItem("category_update_category_name",categoryName);
-    localStorage.setItem("category_update_date",systemDate);
-   }
+    let { id, categoryName, systemDate } = data;
+    localStorage.setItem("category_update_id", id);
+    localStorage.setItem("category_update_category_name", categoryName);
+    localStorage.setItem("category_update_date", systemDate);
+  }
 
   //2.YOL VIEW (LocalStorage)
   const setViewCategory = (id) => {
-    localStorage.setItem("category_view_id",id);
-   }
+    localStorage.setItem("category_view_id", id);
+  }
 
   //DELETE
   const setDeleteCategory = (id) => {
-    if(window.confirm("Silmek istiyor musunuz")){
+    if (window.confirm("Silmek istiyor musunuz")) {
       ApiCategory.categoryApiDeleteById(id)
-      .then(()=>{
-        getAfterDeleteCategoryListReturn();
+        .then(() => {
+          getAfterDeleteCategoryListReturn();
           //window.location="/category/list";
-      })
-      .catch(()=>{})
-    }else{
-      alert(id+" Silinmedi")
+        })
+        .catch(() => { })
+    } else {
+      alert(id + " Silinmedi")
     }
-   }
+  }
 
-   // Sildikten sonra Liste Dönder
-   const getAfterDeleteCategoryListReturn=()=>{
+  // Sildikten sonra Liste Dönder
+  const getAfterDeleteCategoryListReturn = () => {
     //2.YOL
     axios.get("http://localhost:4444/category/api/v1/list")
-    .then((response)=>{
-      if(response.status===200){
-        //console.log("axios data");
-        //console.log(response.data);
-        setCategoryStateApi(response.data)
-      }
-    })
-    .catch((err)=>{
-      console.error(err);
-    });
-   }
+      .then((response) => {
+        if (response.status === 200) {
+          //console.log("axios data");
+          //console.log(response.data);
+          setcategoryListStateApi(response.data)
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
 
- // RETURN
+  // RETURN
   return (
     <React.Fragment>
-      <br /><br /><br /><br />
       <h1 className="text-center display-3">{t("category_list")}</h1>
+      <Link to="/category/create" className="btn btn-primary">Ekle</Link>
       <table className="table table-hover table-striped table-responsive">
         <thead>
           <tr>
@@ -102,7 +102,7 @@ function CategoryList({ t, i18n, props }) {
         <tbody>
           {/* JS yazıyorum */}
           {
-            CategoryStateApi.map((data) =>
+            categoryListStateApi.map((data) =>
               <tr key={data.id}>
                 <td>{data.id}</td>
                 <td>{data.categoryName}</td>

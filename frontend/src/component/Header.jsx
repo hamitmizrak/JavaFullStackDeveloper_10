@@ -1,11 +1,18 @@
 // rcc
 import React, { Component } from 'react'
+
+// axios
+import axios from 'axios';
+
+// Link
+import { Link } from 'react-router-dom';
+
+// i18n
 import { withTranslation } from 'react-i18next';
 
 // flag picture
 import tr_flag from "../img/flag/tr.png"
 import en_flag from "../img/flag/en.png"
-import axios from 'axios';
 
 // Class Component Template
 class Header extends Component {
@@ -73,9 +80,9 @@ class Header extends Component {
                                     </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">
+                                    <Link to="/category/list" className="nav-link" href="#">
                                         {t("category_list")}
-                                    </a>
+                                    </Link>
                                 </li>
                                 {/* <li className="nav-item dropdown">
                                     <a
@@ -123,12 +130,13 @@ class Header extends Component {
                                     placeholder="Search"
                                 />
                                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-                                    Search
+                                    Arama
                                 </button>
                             </form>
                         </div>
                     </div>
                 </nav>
+                <div style={{marginTop:"12%"}}></div>
 
             </React.Fragment>
         ) //end return
