@@ -4,7 +4,7 @@ import axios from "axios";
 const PERSIST_URL = "/category/api/v1";
 
 // CLASS
-export default class ApiCategory {
+class ApiCategory {
 
     // CREATE
     // http://localhost:4444/category/api/v1/create
@@ -41,3 +41,6 @@ export default class ApiCategory {
     }
 
 } //end class
+
+// Export Outher Api Services
+export default new ApiCategory();

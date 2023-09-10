@@ -4,7 +4,7 @@
 /blog/node_modules
 /dockerize/
 # /src/main/resources/application.properties
-/target/
+/target
 
 
 HELP.md

@@ -17,7 +17,9 @@ i18n.use(initReactI18next).init({
                 'category_list':"Category List",
                 'category_create':"Category Create",
                 'category_update':"Category Update",
-                'category_delete':"Category Delete"
+                'category_delete':"Category Delete",
+                "updatedUser":"updated User",
+                'category_name':"Category Name",
             }
         },
         tr:
@@ -34,7 +36,9 @@ i18n.use(initReactI18next).init({
                 'category_list':"Kategori List",
                 'category_create':"Kategori Ekle",
                 'category_update':"Kategori Güncelle",
-                'category_delete':"Kategori Sil"
+                'category_delete':"Kategori Sil",
+                "updatedUser":"Kim Güncelledi",
+                'category_name':"Kategori Adı",
             }
         }
     },
