@@ -1,9 +1,27 @@
 import React from 'react'
+// i18n
+import { withTranslation } from 'react-i18next'
 
-export default function CategoryList() {
+// FUNCTION
+ function CategoryList() {
+
+  // REDIRECT
+
+  // STATE
+
+  // USEEFFECT
+
+  /////////////////////////////////////////
+  // FUNCTION ALL
+
+  // RETURN
   return (
-    <div>
+    <React.Fragment>
         <br /><br /><br /><br />
-        CategoryList</div>
-  )
-}
+        CategoryList
+        </React.Fragment>
+  ) //end return
+} // end function
+
+// i18n 
+export default withTranslation()(CategoryList);

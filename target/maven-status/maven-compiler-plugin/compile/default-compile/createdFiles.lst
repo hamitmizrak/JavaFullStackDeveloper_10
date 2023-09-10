@@ -21,6 +21,7 @@ com\hamitmizrak\controller\api\impl\EmailApiImpl.class
 com\hamitmizrak\data\entity\BlogEntity.class
 com\hamitmizrak\data\entity\EmailEntity.class
 com\hamitmizrak\bean\BeanConfig.class
+com\hamitmizrak\controller\api\impl\Hello.class
 com\hamitmizrak\audit\AuditingAwareBaseDto.class
 com\hamitmizrak\business\services\IEmailServices.class
 com\hamitmizrak\bean\ModelMapperBean.class

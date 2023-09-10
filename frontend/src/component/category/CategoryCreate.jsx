@@ -1,7 +1,28 @@
 import React from 'react'
 
-export default function CategoryCreate() {
+// i18n
+import { withTranslation } from 'react-i18next'
+
+// FUNCTION
+ function CategoryCreate() {
+
+  // REDIRECT
+
+  // STATE
+
+  // USEEFFECT
+
+  /////////////////////////////////////////
+  // FUNCTION ALL
+
+  // RETURN
   return (
-    <div>CategoryCreate</div>
-  )
-}
+    <React.Fragment>
+        <br /><br /><br /><br />
+        CategoryCreate
+        </React.Fragment>
+  ) //end return
+} // end function
+
+// i18n 
+export default withTranslation()(CategoryCreate);
