@@ -8,6 +8,7 @@ image: maven:latest
 
 stages:
     - bash_script
+    - maven
     - docker
 
 cache:
@@ -15,21 +16,42 @@ cache:
     - .m2/repository
     - target
 
-
-
 bash_script_job:
   stage: bash_script 
   script: 
     - echo "$bash_script_variable"
     - ls -lab
-    - ./project.sh
-    - "mvn compile"
+    - chmod 755 project.sh
+    - ./project.sh 
+ 
+maven_job:
+  stage: maven
+  script: 
+    - echo "Maven "
+    - "mvn compile"	
+
+# before_script:
+#   - docker info
+#   - docker-compose --version  
+
+
+  artifacts:
+    paths:
+      - documentation/api/dist
+
 
 docker_compose_job:
   stage: docker 
+  image: docker:17.06.0-ce
+  services:
+    - docker:17.06.0-ce-dind
   script: 
-    - echo $docker_compose_variable"
+    - echo "$docker_compose_variable"
     - pwd
-    - ./project.sh
-    - "mvn compile"
+        # Install Docker Compose
+    - install docker-compose    
+    # - apk add --update py-pip &&
+    #  pip install docker-compose
+    # Generate api.html from the RAML format
+    #- docker-compose --file docker-compose.helpers.yml run --rm api-documentation
     - docker-compose up  # docker-compose -f deneme.docker-compose.yml up -d
