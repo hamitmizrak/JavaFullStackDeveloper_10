@@ -1,0 +1,40 @@
+stages:
+	- system
+    - bash_script
+    - docker
+    - build
+    - test
+    - package
+    - deploy
+
+
+variables:
+  bash_script_variable: "Bash Script Çalışıyor."
+  docker_compose_variable: "Docker-Compose Çalışıyor."
+  # name_surname => CI//CD ben eklediğim
+  MAVEN_OPTS: -Dmaven.repo.local=.m2/repository
+  
+system_job:
+	stage: system 
+	tags: - system 
+	script:
+	  - echo "System Başlıyor"
+	  - apt-get update 
+	  - apt-get upgrade -y
+
+bash_script_job:
+	stage: bash_script 
+	tags: - bash 
+	script:
+	  - echo "$bash_script_variable"
+	  - ls -lab
+	  - pwd 
+	  - ./project.sh
+  
+docker-compose-job:
+    stage: docker
+    tags: - docker
+    script:
+      - echo "$docker_compose_variable"
+	  - pwd
+	  - docker-compose up  # docker-compose -f deneme.docker-compose.yml up -d
