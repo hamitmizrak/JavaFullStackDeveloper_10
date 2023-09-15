@@ -48,3 +48,4 @@ com\hamitmizrak\business\dto\BlogDto$BlogDtoBuilder.class
 com\hamitmizrak\business\services\impl\CategoryServicesImpl.class
 com\hamitmizrak\controller\api\impl\BlogApiImpl.class
 com\hamitmizrak\bean\PasswordEncoderBean.class
+com\hamitmizrak\controller\api\impl\TomcatController.class

@@ -19,6 +19,7 @@ D:\spring\JavaFullStackDeveloper_10\src\main\java\com\hamitmizrak\controller\api
 D:\spring\JavaFullStackDeveloper_10\src\main\java\com\hamitmizrak\business\dto\BlogDto.java
 D:\spring\JavaFullStackDeveloper_10\src\main\java\com\hamitmizrak\data\repository\ICategoryRepository.java
 D:\spring\JavaFullStackDeveloper_10\src\main\java\com\hamitmizrak\exception\ResourceAuthorizedException.java
+D:\spring\JavaFullStackDeveloper_10\src\main\java\com\hamitmizrak\controller\api\impl\TomcatController.java
 D:\spring\JavaFullStackDeveloper_10\src\main\java\com\hamitmizrak\bean\BeanConfig.java
 D:\spring\JavaFullStackDeveloper_10\src\main\java\com\hamitmizrak\business\services\impl\BlogServicesImpl.java
 D:\spring\JavaFullStackDeveloper_10\src\main\java\com\hamitmizrak\controller\api\IBlogApi.java

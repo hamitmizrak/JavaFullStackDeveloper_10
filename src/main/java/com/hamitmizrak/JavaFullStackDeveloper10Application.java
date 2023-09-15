@@ -3,8 +3,9 @@ package com.hamitmizrak;
 import jakarta.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-
 import java.util.TimeZone;
 
 // Mongo aktif etmek ici
@@ -33,14 +34,21 @@ import java.util.TimeZone;
 		org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration.class
 }
 )
-public class JavaFullStackDeveloper10Application {
+public class JavaFullStackDeveloper10Application extends SpringBootServletInitializer { // extends SpringBootServletInitializer
+
+
+	// for Tomcat
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(JavaFullStackDeveloper10Application.class);
+	}
 
 	@PostConstruct
 	public void init() {
 		TimeZone.setDefault(TimeZone.getTimeZone("IST"));
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 
 		// devtools active isActive
 		// System.setProperty("spring.devtools.restart.enabled","true");
