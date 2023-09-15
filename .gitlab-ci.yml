@@ -1,20 +1,30 @@
 variables:
+  global_variables: "Genel Kullanım"
   bash_script_variable: "Bash Script Çalışıyor."
   docker_compose_variable: "Docker-Compose Çalışıyor."
   # name_surname => CI//CD ben eklediğim
   MAVEN_OPTS: -Dmaven.repo.local=.m2/repository
-  
-image: maven:latest  
+  DOCKER_DRIVER: overlay
 
-stages:
-    - bash_script
-    - maven
-    - docker
+image: maven:latest
 
 cache:
   paths:
     - .m2/repository
     - target
+
+stages:
+    - bash_script
+    - nginx_stage
+    - docker_stage
+
+
+#before_script:
+  #- apt-get update
+  #- apt-get upgrade -y
+  #- apk add curl
+  #- apt-get install curl
+  #- curl --version
 
 bash_script_job:
   stage: bash_script 
@@ -25,33 +35,58 @@ bash_script_job:
     - ./project.sh 
  
 maven_job:
-  stage: maven
+  stage: bash_script
   script: 
     - echo "Maven "
     - "mvn compile"	
 
-# before_script:
-#   - docker info
-#   - docker-compose --version  
-
-
   artifacts:
     paths:
-      - documentation/api/dist
+      - documentation/api/dist 
+  when: on_success
 
+
+control-code-job:
+  stage: nginx_stage
+  image: nginx
+  script:
+    - echo "$local_variable"
+    - echo "$name_surname"
+    - echo "Nginx control"
+    - apt-get update
+    - apt-get upgrade -y
+    - service nginx start
+    - pwd
+    - ls 
+    - find / -iname index.html
+    - curl localhost
+    - cp -r . /usr/share/nginx/html
+    - curl localhost
+    - curl ifconfig.me
+    
+  artifacts:
+    untracked: false
+    expire_in: 30 days
+    paths: ["${CI_PROJECT_DIR}/*.html"]
 
 docker_compose_job:
-  stage: docker 
-  image: docker:17.06.0-ce
+  stage: docker_stage 
+  image: docker:latest
   services:
-    - docker:17.06.0-ce-dind
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay2 # not sure if this is needed
+    DOCKER_TLS_CERTDIR: "/certs"  
   script: 
     - echo "$docker_compose_variable"
     - pwd
-        # Install Docker Compose
-    - install docker-compose    
-    # - apk add --update py-pip &&
-    #  pip install docker-compose
-    # Generate api.html from the RAML format
-    #- docker-compose --file docker-compose.helpers.yml run --rm api-documentation
-    - docker-compose up  # docker-compose -f deneme.docker-compose.yml up -d
+    - docker info
+    - docker-compose --version   
+    - docker-compose up -d
+    # - docker-compose -f docker-compose.test.yml build
+    - docker ps
+
+  artifacts:
+    untracked: false
+    expire_in: 30 days
+    paths: ["${CI_PROJECT_DIR}/*.html"]
