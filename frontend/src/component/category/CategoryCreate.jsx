@@ -18,14 +18,17 @@ function CategoryCreate({t, i18n, props}) {
     // STATE
     const [categoryName, setCategoryName] = useState('');
     const [error, setError] = useState();
-    const [multipleRequest, setMultipleRequest] = useState();
     const [isRead, setIsRead] = useState(false);
+    const [spinner, setSpinner] = useState(false);
+    const [multipleRequest, setMultipleRequest] = useState();
+
 
     // USE EFFECT
     // categoryName'de errorda herhangi bir değişiklik olduğunda error mesajı silinsin
     useEffect(() => {
         setError(undefined);
         setIsRead(false);
+        setSpinner(false);
     }, [categoryName]);
 
     /////////////////////////////////////////
@@ -59,16 +62,21 @@ function CategoryCreate({t, i18n, props}) {
         //  Hatayı gösterme
         setError(undefined);
 
+        // Spinner
+        setSpinner(true);
+
         // try-catch
         try {
             const response = await ApiCategory.categoryApiCreate(newCategory);
             if (response.status == 200) {
                 // alert("success")
+                setSpinner(false); // Spinner
                 navigate("/category/list");
             }
         } catch (e) {
             console.error(e);
             setError(e.response.data.validationErrors);
+            setSpinner(true); // Spinner
         }
     }
 
@@ -113,10 +121,12 @@ function CategoryCreate({t, i18n, props}) {
                     type="submit"
                     className="btn btn-primary mt-2"
                     disabled={!isRead}
-                    onClick={categoryCreateSubmit}
-                >
-                    <div className="spinner-border text-warning" style={{fontSize: "50px"}}>
-                    </div>
+                    onClick={categoryCreateSubmit}>
+                    {/*spinner çalışması */}
+                    {
+                        (spinner) &&<div className="spinner-border text-warning" style={{fontSize: "50px"}}>
+                        </div>
+                    }
                     {t('create')}</button>
             </form>
         </React.Fragment>
