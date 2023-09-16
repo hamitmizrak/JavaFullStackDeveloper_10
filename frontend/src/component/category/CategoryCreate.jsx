@@ -5,6 +5,8 @@ import {withTranslation} from 'react-i18next'
 
 // Router
 import {useNavigate} from 'react-router-dom';
+
+// Api
 import ApiCategory from "../../services/ApiCategory";
 
 // FUNCTION
@@ -106,14 +108,16 @@ function CategoryCreate({t, i18n, props}) {
                     </label>
                 </div>
 
-
                 <button className="btn btn-danger mt-2 me-2">{t('cleaner')}</button>
                 <button
                     type="submit"
                     className="btn btn-primary mt-2"
                     disabled={!isRead}
                     onClick={categoryCreateSubmit}
-                >{t('create')}</button>
+                >
+                    <div className="spinner-border text-warning" style={{fontSize: "50px"}}>
+                    </div>
+                    {t('create')}</button>
             </form>
         </React.Fragment>
     ) //end return
