@@ -22,7 +22,6 @@ function CategoryCreate({t, i18n, props}) {
     const [spinner, setSpinner] = useState(false);
     const [multipleRequest, setMultipleRequest] = useState();
 
-
     // USE EFFECT
     // categoryName'de errorda herhangi bir değişiklik olduğunda error mesajı silinsin
     useEffect(() => {
@@ -41,6 +40,11 @@ function CategoryCreate({t, i18n, props}) {
         console.log(`${name} => ${value}`)
         //onChange
         setCategoryName(value);
+
+        // is Read
+        if(localStorage.getItem("is_read")=="true"){
+            setIsRead(true)
+        }
     }
 
     // Is Read
@@ -63,6 +67,9 @@ function CategoryCreate({t, i18n, props}) {
 
         // Spinner
         setSpinner(true);
+
+        // is Read
+       localStorage.setItem("is_read","true");
 
         // try-catch
         try {
@@ -102,18 +109,21 @@ function CategoryCreate({t, i18n, props}) {
                 {
                     (error) ? <div className="alert alert-warning mt-2 mb-2">{error.categoryName}</div> : ""
                 }
-                <div className="form-check mt-3 mb-3">
-                    <input
-                        className="form-check-input"
-                        type="checkbox"
-                        name="isRead"
-                        id="isRead"
-                        onChange={categoryReadOnChange}
-                    />
-                    <label className="form-check-label" htmlFor="isRead">
-                        Okudunuz mu ?
-                    </label>
-                </div>
+                {
+                    (localStorage.getItem("is_read")=="true"?"":<div className="form-check mt-3 mb-3">
+                        <input
+                            className="form-check-input"
+                            type="checkbox"
+                            name="isRead"
+                            id="isRead"
+                            onChange={categoryReadOnChange}
+                        />
+                        <label className="form-check-label" htmlFor="isRead">
+                            Okudunuz mu ?
+                        </label>
+                    </div>)
+                }
+
 
                 <button className="btn btn-danger mt-2 me-2">{t('cleaner')}</button>
                 <button
