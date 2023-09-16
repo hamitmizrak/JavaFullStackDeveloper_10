@@ -38,12 +38,13 @@ function CategoryCreate({t, i18n, props}) {
         //  name="category_name"
         const {name, value} = event.target;
         console.log(`${name} => ${value}`)
+
         //onChange
         setCategoryName(value);
 
-        // is Read
-        if(localStorage.getItem("is_read")=="true"){
-            setIsRead(true)
+        // 1 kere okuduktan sonra tekrar göstermesin (step-3)
+        if (localStorage.getItem("is_read") == "true") {
+            setIsRead(true);
         }
     }
 
@@ -68,8 +69,8 @@ function CategoryCreate({t, i18n, props}) {
         // Spinner
         setSpinner(true);
 
-        // is Read
-       localStorage.setItem("is_read","true");
+        // 1 kere okuduktan sonra tekrar göstermesin (step-1)
+        localStorage.setItem("is_read", "true");
 
         // try-catch
         try {
@@ -109,21 +110,22 @@ function CategoryCreate({t, i18n, props}) {
                 {
                     (error) ? <div className="alert alert-warning mt-2 mb-2">{error.categoryName}</div> : ""
                 }
+                {/*1 kere okuduktan sonra tekrar göstermesin (step-2)*/}
                 {
-                    (localStorage.getItem("is_read")=="true"?"":<div className="form-check mt-3 mb-3">
-                        <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="isRead"
-                            id="isRead"
-                            onChange={categoryReadOnChange}
-                        />
-                        <label className="form-check-label" htmlFor="isRead">
-                            Okudunuz mu ?
-                        </label>
-                    </div>)
+                    (localStorage.getItem("is_read") == "true" ? "" :
+                        <div className="form-check mt-3 mb-3">
+                            <input
+                                className="form-check-input"
+                                type="checkbox"
+                                name="isRead"
+                                id="isRead"
+                                onChange={categoryReadOnChange}
+                            />
+                            <label className="form-check-label" htmlFor="isRead">
+                                Okudunuz mu ?
+                            </label>
+                        </div>)
                 }
-
 
                 <button className="btn btn-danger mt-2 me-2">{t('cleaner')}</button>
                 <button
@@ -133,7 +135,7 @@ function CategoryCreate({t, i18n, props}) {
                     onClick={categoryCreateSubmit}>
                     {/*spinner çalışması */}
                     {
-                        (spinner) &&<div className="spinner-border text-warning" style={{fontSize: "50px"}}>
+                        (spinner) && <div className="spinner-border text-warning" style={{fontSize: "50px"}}>
                         </div>
                     }
                     {t('create')}</button>
