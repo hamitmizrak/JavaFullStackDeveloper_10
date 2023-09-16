@@ -16,11 +16,16 @@ function CategoryCreate({t, i18n, props}) {
     const navigate = useNavigate();
 
     // STATE
+    // category
     const [categoryName, setCategoryName] = useState('');
+    // error
     const [error, setError] = useState();
+    // Read
     const [isRead, setIsRead] = useState(false);
+    // Spinner
     const [spinner, setSpinner] = useState(false);
-    const [multipleRequest, setMultipleRequest] = useState();
+    // multiple
+    const [multipleRequest, setMultipleRequest] = useState(false);
 
     // USE EFFECT
     // categoryName'de errorda herhangi bir değişiklik olduğunda error mesajı silinsin
@@ -70,6 +75,9 @@ function CategoryCreate({t, i18n, props}) {
         // Spinner
         setSpinner(true);
 
+        // Çoklu istekler
+        setMultipleRequest(true);
+
         // 1 kere okuduktan sonra tekrar göstermesin (step-1)
         localStorage.setItem("is_read", "true");
 
@@ -79,12 +87,17 @@ function CategoryCreate({t, i18n, props}) {
             if (response.status == 200) {
                 // alert("success")
                 setSpinner(false); // Spinner
+                // Çoklu istekler
+                setMultipleRequest(false);
+                // Redirect
                 navigate("/category/list");
             }
         } catch (e) {
             console.error(e);
             setError(e.response.data.validationErrors);
             setSpinner(true); // Spinner
+            // Çoklu istekler
+            setMultipleRequest(true);
         }
     }
 
@@ -132,7 +145,7 @@ function CategoryCreate({t, i18n, props}) {
                 <button
                     type="submit"
                     className="btn btn-primary mt-2"
-                    disabled={!isRead}
+                    disabled={  (!isRead) || (multipleRequest) || (!localStorage.getItem("is_read") == "true" )}
                     onClick={categoryCreateSubmit}>
                     {/*spinner çalışması */}
                     {
