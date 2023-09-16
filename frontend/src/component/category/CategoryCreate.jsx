@@ -27,7 +27,6 @@ function CategoryCreate({t, i18n, props}) {
     // categoryName'de errorda herhangi bir değişiklik olduğunda error mesajı silinsin
     useEffect(() => {
         setError(undefined);
-        setIsRead(false);
         setSpinner(false);
     }, [categoryName]);
 
