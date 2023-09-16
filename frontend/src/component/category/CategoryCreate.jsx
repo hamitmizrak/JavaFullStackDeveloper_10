@@ -23,6 +23,7 @@ function CategoryCreate({t, i18n, props}) {
     // categoryName'de errorda herhangi bir değişiklik olduğunda error mesajı silinsin
     useEffect(() => {
         setError(undefined);
+        setIsRead(false);
     }, [categoryName]);
 
     /////////////////////////////////////////
@@ -38,13 +39,19 @@ function CategoryCreate({t, i18n, props}) {
         setCategoryName(value);
     }
 
+    // Is Read
+    const categoryReadOnChange = (event) => {
+        console.log(event.target.checked);
+        setIsRead(event.target.checked);
+    }
+
     // Create Submit
     const categoryCreateSubmit = async (event) => {
         // Browser Post yapmasın
         event.preventDefault();
 
         // Category Object
-        const newCategory={categoryName};
+        const newCategory = {categoryName};
         console.log(newCategory);
 
         //  Hatayı gösterme
@@ -52,12 +59,12 @@ function CategoryCreate({t, i18n, props}) {
 
         // try-catch
         try {
-        const response=  await ApiCategory.categoryApiCreate(newCategory);
-        if(response.status==200){
-            // alert("success")
-            navigate("/category/list");
-        }
-        }catch (e) {
+            const response = await ApiCategory.categoryApiCreate(newCategory);
+            if (response.status == 200) {
+                // alert("success")
+                navigate("/category/list");
+            }
+        } catch (e) {
             console.error(e);
             setError(e.response.data.validationErrors);
         }
@@ -86,12 +93,25 @@ function CategoryCreate({t, i18n, props}) {
                 {
                     (error) ? <div className="alert alert-warning mt-2 mb-2">{error.categoryName}</div> : ""
                 }
-                <input type="checkbox" name="" id=""/> Okunuz mu ? <br/>
+                <div className="form-check mt-3 mb-3">
+                    <input
+                        className="form-check-input"
+                        type="checkbox"
+                        name="isRead"
+                        id="isRead"
+                        onChange={categoryReadOnChange}
+                    />
+                    <label className="form-check-label" htmlFor="isRead">
+                        Okudunuz mu ?
+                    </label>
+                </div>
+
+
                 <button className="btn btn-danger mt-2 me-2">{t('cleaner')}</button>
                 <button
                     type="submit"
                     className="btn btn-primary mt-2"
-                    disabled={!true}
+                    disabled={!isRead}
                     onClick={categoryCreateSubmit}
                 >{t('create')}</button>
             </form>
