@@ -27,5 +27,5 @@ public interface ICategoryApi <D> {
     public ResponseEntity<String> categoryApiAllDelete();
 
     // SPEED DATA
-    public ResponseEntity<List<D>> categoryApiSpeedData(Long key);
+    public ResponseEntity<String> categoryApiSpeedData(Integer data);
 }

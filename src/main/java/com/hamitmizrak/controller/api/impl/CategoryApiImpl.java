@@ -68,15 +68,19 @@ public class CategoryApiImpl implements ICategoryApi<CategoryDto> {
 
     ///////////////////////////////////////////////////////
     // ALL DELETE
+    // http://localhost:4444/category/api/v1/delete/all
     @Override
+    @DeleteMapping(value="/delete/all")
     public ResponseEntity<String> categoryApiAllDelete() {
-        return null;
+        return ResponseEntity.ok(iCategoryServices.categoryDeleteAll());
     }
 
     // SPEED DATA
+    // http://localhost:4444/category/api/v1/speed/10
     @Override
-    public ResponseEntity<List<CategoryDto>> categoryApiSpeedData(Long key) {
-        return null;
+    @GetMapping(value="/speed/{id}")
+    public ResponseEntity<String> categoryApiSpeedData(@PathVariable(name = "id")  Integer data) {
+        return  ResponseEntity.ok(iCategoryServices.categorySpeedData(data));
     }
 
 } //end class
