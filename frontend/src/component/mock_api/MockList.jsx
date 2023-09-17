@@ -6,9 +6,6 @@ import { withTranslation } from 'react-i18next'
 // Navigate
 import { Link, useNavigate } from 'react-router-dom';
 
-// Services
-import ApiCategory from '../../services/ApiCategory';
-
 // axios
 import axios from 'axios';
 
