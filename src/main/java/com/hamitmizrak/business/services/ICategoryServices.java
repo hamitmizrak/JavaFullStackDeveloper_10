@@ -1,7 +1,4 @@
 package com.hamitmizrak.business.services;
-
-import org.springframework.http.ResponseEntity;
-
 import java.util.List;
 
 // D: Dto
@@ -28,7 +25,6 @@ public interface ICategoryServices<D, E> {
 
     // DELETE
     public D categoryServiceDeleteById(Long id);
-
     ///////////////////////////////////////////
 
     // SPEED DATA Category

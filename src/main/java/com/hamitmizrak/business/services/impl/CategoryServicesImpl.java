@@ -136,7 +136,6 @@ public class CategoryServicesImpl implements ICategoryServices<CategoryDto, Cate
         return categoryFindDto;
     }
 
-
     ////////////////////////////////////////////////////////
 
     // SPEED DATA
