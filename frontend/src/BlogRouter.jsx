@@ -15,6 +15,7 @@ import CategoryUpdate from "./component/category/CategoryUpdate";
 // i18n
 import { withTranslation } from 'react-i18next';
 import CategoryView from "./component/category/CategoryView";
+import MockList from "./component/mock_api/MockList";
 
 // Class Component Template
 class BlogRouter extends Component {
@@ -55,6 +56,9 @@ class BlogRouter extends Component {
                         <Route path={"/category/create"} element={<CategoryCreate name="Category Create" />} />
                         <Route path={"/category/view/:id"} element={<CategoryView name="Category View" />} />
                         <Route path={"/category/update/:id"} element={<CategoryUpdate name="Category Update" />} />
+
+                        <Route path={"/mock/list"} element={<MockList />} />
+
 
                         {/* Bad Request*/}
                         <Route path={"*"} element={<Navigate to={"/"} />} />

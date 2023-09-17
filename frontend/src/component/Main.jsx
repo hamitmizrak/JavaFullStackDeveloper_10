@@ -40,7 +40,8 @@ class Main extends Component {
        <img src={mainPicture} />
        <br />
        <Link className="btn btn-primary mt-3 ms-2" to="/category/list">Category List</Link>
-       
+       <Link className="btn btn-primary mt-3 ms-2" to="/mock/list">Mock List</Link>
+
       </React.Fragment>
     ) //end return
   } // // end render
