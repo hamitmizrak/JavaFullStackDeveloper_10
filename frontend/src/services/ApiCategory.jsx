@@ -29,8 +29,8 @@ class ApiCategory {
     // UPDATE
     // http://localhost:4444/category/api/v1/update/1
     //@PutMapping(value = "/update/{id}")
-     categoryApiUpdate( id,  categoryDto) {
-        return axios.put(`${PERSIST_URL}/update/${id}`,categoryDto);
+    categoryApiUpdate(id, categoryDto) {
+        return axios.put(`${PERSIST_URL}/update/${id}`, categoryDto);
     }
 
     // DELETE BY ID
@@ -38,6 +38,21 @@ class ApiCategory {
     //@DeleteMapping(value = "/delete/{id}")
     categoryApiDeleteById(id) {
         return axios.delete(`${PERSIST_URL}/delete/${id}`);
+    }
+
+
+    // ALL DELETE
+    // http://localhost:4444/category/api/v1/delete/all
+    //@DeleteMapping(value="/delete/all")
+    categoryApiAllDelete() {
+        return axios.delete(`${PERSIST_URL}/delete/all`);
+    }
+
+    // SPEED DATA
+    // http://localhost:4444/category/api/v1/speed/10
+    //@GetMapping(value = "/speed/{id}")
+     categoryApiSpeedData(id) {
+        return axios.get(PERSIST_URL + "/speed/" + id);
     }
 
 } //end class

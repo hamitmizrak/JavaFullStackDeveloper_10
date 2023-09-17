@@ -84,11 +84,38 @@ function CategoryList({ t, i18n, props }) {
       });
   }
 
+  // Delete All
+  const deleteAll = () => {
+    if (window.confirm("Silmek istiyor musunuz")) {
+      ApiCategory.categoryApiAllDelete()
+        .then(() => {
+          getAfterDeleteCategoryListReturn();
+          navigate("/category/list")
+        })
+        .catch(() => { })
+    } else {
+      alert(" Silinmedi")
+    }
+  }
+
+  // Speed Data
+  const speedData = async () => {
+    let user = prompt("Kaç tane veri eklemek istiyorsunuz");
+    let response = await ApiCategory.categoryApiSpeedData(user);
+    if(response.status==200){
+      getAfterDeleteCategoryListReturn();
+      navigate("/category/list")
+    }
+  }
+
   // RETURN
   return (
     <React.Fragment>
       <h1 className="text-center display-3">{t("category_list")}</h1>
-      <Link to="/category/create" className="btn btn-primary">Ekle</Link>
+      <Link to="/category/create" className="btn btn-primary me-2">Ekle</Link>
+      <button onClick={deleteAll} className="btn btn-danger me-2">All Delete</button>
+      <button onClick={speedData} className="btn btn-info">Speed Data</button>
+
       <table className="table table-hover table-striped table-responsive">
         <thead>
           <tr>
