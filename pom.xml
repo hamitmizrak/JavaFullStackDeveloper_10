@@ -20,7 +20,7 @@
 	<description>all Spring Boot</description>
 	<!--apache tomcat manuel için war ekliyorum-->
 	<!--<packaging>jar</packaging>-->
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<!--properties-->
 	<properties>
