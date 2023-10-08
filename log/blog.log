@@ -1,0 +1,49 @@
+2023-09-19T23:34:05.887+03:00  INFO 31552 --- [restartedMain] c.h.JavaFullStackDeveloper10Application  : Starting JavaFullStackDeveloper10Application using Java 17.0.5 with PID 31552 (D:\spring\JavaFullStackDeveloper_10\target\classes started by 90553 in D:\spring\JavaFullStackDeveloper_10)
+2023-09-19T23:34:05.895+03:00  INFO 31552 --- [restartedMain] c.h.JavaFullStackDeveloper10Application  : The following 1 profile is active: "frontend"
+2023-09-19T23:34:05.955+03:00  INFO 31552 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-19T23:34:05.955+03:00  INFO 31552 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-19T23:34:06.886+03:00  INFO 31552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-19T23:34:06.932+03:00  INFO 31552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 3 JPA repository interfaces.
+2023-09-19T23:34:07.509+03:00  INFO 31552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 4444 (http)
+2023-09-19T23:34:07.518+03:00  INFO 31552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-19T23:34:07.519+03:00  INFO 31552 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-19T23:34:07.578+03:00  INFO 31552 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-19T23:34:07.579+03:00  INFO 31552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1623 ms
+2023-09-19T23:34:07.684+03:00  INFO 31552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-19T23:34:07.872+03:00  INFO 31552 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3253b3c8
+2023-09-19T23:34:07.873+03:00  INFO 31552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-19T23:34:07.881+03:00  INFO 31552 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog?createDatabaseIfNotExist=true&autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false'
+2023-09-19T23:34:07.931+03:00 DEBUG 31552 --- [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2023-09-19T23:34:07.931+03:00 DEBUG 31552 --- [restartedMain] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
+2023-09-19T23:34:08.258+03:00  INFO 31552 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-19T23:34:09.353+03:00  INFO 31552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-19T23:34:09.815+03:00  WARN 31552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-19T23:34:09.907+03:00 DEBUG 31552 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-09-19T23:34:09.935+03:00  INFO 31552 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-19T23:34:09.992+03:00 DEBUG 31552 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2023-09-19T23:34:10.509+03:00 DEBUG 31552 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2023-09-19T23:34:10.518+03:00 DEBUG 31552 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-09-19T23:34:10.853+03:00  INFO 31552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-19T23:34:10.857+03:00  INFO 31552 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoint(s) beneath base path '/actuator'
+2023-09-19T23:34:10.915+03:00  WARN 31552 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2023-09-19T23:34:10.919+03:00  INFO 31552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-19T23:34:10.922+03:00  INFO 31552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-19T23:34:10.929+03:00  INFO 31552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-19T23:34:10.931+03:00  INFO 31552 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-19T23:34:10.949+03:00  INFO 31552 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-19T23:34:10.965+03:00 ERROR 31552 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 4444 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 4444 or configure this application to listen on another port.
+

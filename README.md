@@ -1,13 +1,15 @@
 ![](https://komarev.com/ghpvc/?username=hamitmizrak)
 
-![readme](./picture/readme.jpg)
- 
----
-https://github.com/hamitmizrak/
----
-***
+![readme](./picture/readme.png)
+
+[Full Stack 10]( https://github.com/hamitmizrak/JavaFullStackDeveloper_10.git)
 
 ---
+
+## Technology
+- *Java*  **Core**
+- *Java* `Spring Boot`
+
 ## RolMap
 
 ### Bean

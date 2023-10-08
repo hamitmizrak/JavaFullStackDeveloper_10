@@ -27,7 +27,7 @@ import java.util.TimeZone;
 // Auditing Aktif etmek
 @EnableJpaAuditing(auditorAwareRef = "auditorAwareBeanMethod")
 
-// Spring Security
+// Spring Security: Şimdilik dahil etme ancak Spring security için gerekli kütüphaneleri dahil
 @SpringBootApplication(exclude = {
 		//SecurityAutoConfiguration.class,
 		org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class,

@@ -35,9 +35,6 @@ function MockList({ t, i18n, props }) {
       });
   }, []); //end useEffect
   /////////////////////////////////////////
-  // FUNCTION ALL
-  // id: 1, systemDate: '2023-08-28T07:55:24.075+00:00', updatedUser: 'HamitM.', updatedDate: '2023-08-29T10:24:33.428+00:00', categoryName: 'bilgisayar449696'
-
 
   //DELETE
   const setDeleteMockApi = (id) => {
@@ -75,7 +72,6 @@ function MockList({ t, i18n, props }) {
     <React.Fragment>
       <h1 className="text-center display-3">{t("category_list")}</h1>
       <Link to="/category/create" className="btn btn-primary me-2">Ekle</Link>
-
 
       <table className="table table-hover table-striped table-responsive">
         <thead>

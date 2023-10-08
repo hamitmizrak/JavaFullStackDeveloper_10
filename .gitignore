@@ -1,15 +1,16 @@
-# special data
-/log
-/memory_persist
+# it have to for git files or director untracked special data
 /blog/node_modules
 /dockerize/
+# /log
+# /memory_persist
 # /src/main/resources/application.properties
-/target/*
+# /target/*
 
 
 HELP.md
+target/
 !.mvn/wrapper/maven-wrapper.jar
-!blog/src/component/main/**/target/
+!**/src/main/**/target/
 !**/src/test/**/target/
 
 ### STS ###
@@ -34,7 +35,7 @@ HELP.md
 /nbdist/
 /.nb-gradle/
 build/
-!blog/src/component/main/**/build/
+!**/src/main/**/build/
 !**/src/test/**/build/
 
 ### VS Code ###
