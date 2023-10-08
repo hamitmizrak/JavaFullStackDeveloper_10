@@ -1,10 +1,7 @@
 package com.hamitmizrak.business.services.impl;
 
-import com.hamitmizrak.bean.ModelMapperBean;
-import com.hamitmizrak.business.dto.BlogDto;
 import com.hamitmizrak.business.dto.EmailDto;
 import com.hamitmizrak.business.services.IEmailServices;
-import com.hamitmizrak.data.entity.BlogEntity;
 import com.hamitmizrak.data.entity.EmailEntity;
 import com.hamitmizrak.data.repository.IEmailRepository;
 import jakarta.mail.internet.MimeMessage;
@@ -14,7 +11,6 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;

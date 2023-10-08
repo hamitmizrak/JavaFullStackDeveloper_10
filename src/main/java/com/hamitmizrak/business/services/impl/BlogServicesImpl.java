@@ -1,6 +1,5 @@
 package com.hamitmizrak.business.services.impl;
 
-import com.hamitmizrak.bean.ModelMapperBean;
 import com.hamitmizrak.business.dto.BlogDto;
 import com.hamitmizrak.business.services.IBlogServices;
 import com.hamitmizrak.data.entity.BlogEntity;
